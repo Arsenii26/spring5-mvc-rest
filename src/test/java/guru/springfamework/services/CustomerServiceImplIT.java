@@ -25,6 +25,7 @@ import static org.junit.Assert.assertThat;
 /**
  * Created by jt on 10/3/17.
  */
+// integration test
 @RunWith(SpringRunner.class)
 @DataJpaTest
 public class CustomerServiceImplIT {
@@ -45,7 +46,7 @@ public class CustomerServiceImplIT {
         System.out.println("Loading Customer Data");
         System.out.println(customerRepository.findAll().size());
 
-        //setup data for testing
+        //setup data for testing (CREATE DATA)
         Bootstrap bootstrap = new Bootstrap(categoryRepository, customerRepository, vendorRepository);
         bootstrap.run(); //load data
 
@@ -101,6 +102,7 @@ public class CustomerServiceImplIT {
         assertThat(originalLastName, not(equalTo(updatedCustomer.getLastname())));
     }
 
+    // FIX (UPDATED ID BEFORE EVERY TEST)
     private Long getCustomerIdValue(){
         List<Customer> customers = customerRepository.findAll();
 

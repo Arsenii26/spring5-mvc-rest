@@ -10,6 +10,7 @@ public class VendorMapperTest {
 
     public static final String NAME = "someName";
 
+    // many PEOPLE DOING A LOT OF ERRORS IN SETUP THE MAPPER (in this test it's correct)
     VendorMapper vendorMapper = VendorMapper.INSTANCE;
 
     @Test

@@ -30,6 +30,7 @@ public class CustomerControllerTest extends AbstractRestControllerTest {
     @Mock
     CustomerService customerService;
 
+    // FIRST WAY TO INJECT MOCK (WE MANUALLY INJECT IT, BUT IN THE SECOND SPRING DOING IT)
     @InjectMocks
     CustomerController customerController;
 
@@ -84,6 +85,7 @@ public class CustomerControllerTest extends AbstractRestControllerTest {
                 .andExpect(jsonPath("$.firstname", equalTo("Michale")));
     }
 
+    // WILL CREATE CUSTOMER
     @Test
     public void createNewCustomer() throws Exception {
         //given
@@ -122,6 +124,7 @@ public class CustomerControllerTest extends AbstractRestControllerTest {
         when(customerService.saveCustomerByDTO(anyLong(), any(CustomerDTO.class))).thenReturn(returnDTO);
 
         //when/then
+        // UPDATE
         mockMvc.perform(put(CustomerController.BASE_URL + "/1")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(asJsonString(customer)))

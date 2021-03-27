@@ -30,6 +30,7 @@ public class CategoryServiceTest {
     public void setUp() throws Exception {
         MockitoAnnotations.initMocks(this);
 
+        // setup MAPPER
         categoryService = new CategoryServiceImpl(CategoryMapper.INSTANCE, categoryRepository);
     }
 

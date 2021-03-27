@@ -12,6 +12,7 @@ import org.springframework.stereotype.Component;
 /**
  * Created by jt on 9/24/17.
  */
+// class will init data (for testing)
 @Component
 public class Bootstrap implements CommandLineRunner{
 

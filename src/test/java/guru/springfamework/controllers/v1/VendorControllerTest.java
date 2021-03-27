@@ -25,12 +25,12 @@ import static org.mockito.BDDMockito.then;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-
+// REALLY GOOD TEST (SECOND WAY TO INJECT MOCK WITH SPRING CONTEXT)
 @RunWith(SpringRunner.class)
 @WebMvcTest(controllers = {VendorController.class})
 public class VendorControllerTest {
 
-    @MockBean //provided by Spring Context
+    @MockBean //provided by Spring Context (cREATE MOKITO MOCKS AND INJECT TO A CLASS BY SPRING CONTEXT)
     VendorService vendorService;
 
     @Autowired

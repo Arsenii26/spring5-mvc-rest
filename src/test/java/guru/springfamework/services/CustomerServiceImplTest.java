@@ -72,6 +72,7 @@ public class CustomerServiceImplTest {
         assertEquals("Michale", customerDTO.getFirstname());
     }
 
+    // JUST CREATE NEW CUSTOMER
     @Test
     public void createNewCustomer() throws Exception {
 
@@ -123,6 +124,7 @@ public class CustomerServiceImplTest {
 
         customerRepository.deleteById(id);
 
+        // THE DELETE WAS RUN ONE TIME by times(1)
         verify(customerRepository, times(1)).deleteById(anyLong());
     }
 
